@@ -4,11 +4,11 @@ import kotlin.math.PI
 
 class Circle() : Figure() {
     protected var radius: Float = 0f
-    protected var color: Color? = null
+    protected var color: Color = Color()
 
     constructor(radius: Float = 0f, color: String = "") : this() {
         this.radius = radius
-        this.color!!.setColor(color)
+        this.color.setColor(color)
         this.name = "Круг"
     }
 
@@ -16,7 +16,8 @@ class Circle() : Figure() {
         return PI.toFloat() * this.radius * this.radius
     }
 
-    override fun getFigureName(): String {
-        return this.name
+    override fun getInfo(): String {
+        return this.getFigureName() + " " + this.radius.toString() + " " + this.color.getColor() + " " +
+                this.calculateArea().toString()
     }
 }

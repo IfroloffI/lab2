@@ -1,5 +1,5 @@
-import OOP.*
+import org.junit.runner.JUnitCore
 
 fun main() {
-    println("Hello World!")
+    JUnitCore.main("TESTS.AppTest");
 }
